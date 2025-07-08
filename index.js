@@ -12,4 +12,5 @@ for (let i = 0; i < vetDescricao.length; i++){
         vetResultado.push(vetDescricao[i])
     }
 }
+
 }
