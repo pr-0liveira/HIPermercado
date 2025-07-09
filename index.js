@@ -1,19 +1,30 @@
 const inPesquisa = document.getElementById("inPesquisa")
 const btPesquisar = document.getElementById("btPesquisar")
 const outResultado = document.getElementById("outResultado")
-const sltFormadePesquisa = document.getElementById("sltFormadePesquisa")
+const tbPesquisa = document.getElementById("tbPsquisa")
 
 
 btPesquisar.addEventListener("click", pesquisarElementos)
 
-switch ()
 
 function pesquisarElementos() {
     var vetProdutosPesquisados = []
+    var vetMarcaProdutosPesquisados = []
+    var vetCategoriaProdutosPesquisados = []
+    var vetUnidProdutosPesquisados = []
+    var vetPreçoProdutosPesquisados = []
+    console.log(vetCategoriaProdutosPesquisados)
+
     for (let i = 0; i < vetDescricao.length; i++) {
-        if (vetDescricao[i].toUpperCase().includes(inPesquisa.value.toUpperCase())) {
+        if (vetDescricao[i].toUpperCase().includes(inPesquisa.value.toUpperCase())){
+
+
             vetProdutosPesquisados.push(vetDescricao[i])
+            vetMarcaProdutosPesquisados.push(vetMarca[i])
+            vetCategoriaProdutosPesquisados.push(vetCategoria[i])
+            vetUnidProdutosPesquisados.push(vetUnidMed[i])
+            vetPreçoProdutosPesquisados.push(vetPreco[i])
         }
     }
-    outResultado.innerHTML = `O produtos disponíveis são: <br> ${vetProdutosPesquisados.join("<br>")} `
+
 }
