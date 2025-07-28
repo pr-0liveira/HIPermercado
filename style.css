@@ -1,3 +1,6 @@
-#btMostrarCarrinho{
-    position: fixed;
+.produto{
+    width: 300px;
+    margin: 10px;
+    box-sizing: border-box;
+    display: inline-block;
 }

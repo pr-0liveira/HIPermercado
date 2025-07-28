@@ -6,7 +6,9 @@ const btMostrarCarrinho = document.getElementById("mostrarCarrinho")
 //gerando a lista de produtos
 var listaProdutos = document.getElementById("lista-produtos");
 for(let i = 0; i < vetDescricao.length; i++){
+    var listaProdutos = document.getElementById("lista-produtos");
     var produto = document.createElement('div');
+    produto.className = "produto";
     var infoProduto = document.createElement('h4');
     infoProduto.innerHTML = "Produto: " + vetDescricao[i] +
                             "<br>Categoria: " + vetCategoria[i] +
@@ -15,15 +17,18 @@ for(let i = 0; i < vetDescricao.length; i++){
                             "<br>Preço: R$" + vetPreco[i];
     var btAddCarrinho = document.createElement('button');
     btAddCarrinho.textContent = "Adicionar ao Carrinho";
+    btAddCarrinho.value = i;
     produto.appendChild(infoProduto);
     produto.appendChild(btAddCarrinho);
-    document.body.insertBefore(produto, listaProdutos);
+    listaProdutos.appendChild(produto);
+    btAddCarrinho.addEventListener("click", adicionarNoCarrinho);
 }
 
+//adiciona produtos no carrinho
 var vetCarrinho = [];
-btMostrarCarrinho.addEventListener("click", mostrarCarrinho);
-function mostrarCarrinho(){
-    
+function adicionarNoCarrinho(event){
+    vetCarrinho.push(Number(event.target.value));
+    console.log(vetCarrinho);
 }
 
 btPesquisar.addEventListener("click", pesquisarElementos)
