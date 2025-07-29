@@ -2,7 +2,8 @@ const inPesquisa = document.getElementById("inPesquisa")
 const btPesquisar = document.getElementById("btPesquisar")
 const outResultado = document.getElementById("outResultado")
 const tbPesquisa = document.getElementById("tbPsquisa")
-
+const listaProdutos = document.getElementById("lista-produtos");
+const sltPEsquisas = document.getElementById("sltPEsquisas")
 
 btPesquisar.addEventListener("click", pesquisarElementos)
 
@@ -15,6 +16,8 @@ function pesquisarElementos() {
     var vetPreçoProdutosPesquisados = []
     console.log(vetCategoriaProdutosPesquisados)
 
+    listaProdutos.innerHTML = "";
+
     for (let i = 0; i < vetDescricao.length; i++) {
         if (vetDescricao[i].toUpperCase().includes(inPesquisa.value.toUpperCase())) {
 
@@ -23,8 +26,7 @@ function pesquisarElementos() {
             vetCategoriaProdutosPesquisados.push(vetCategoria[i])
             vetUnidProdutosPesquisados.push(vetUnidMed[i])
             vetPreçoProdutosPesquisados.push(vetPreco[i])
-
-            var listaProdutos = document.getElementById("lista-produtos");
+            
             var produto = document.createElement('div');
             produto.className = "produto";
             var infoProduto = document.createElement('h4');
