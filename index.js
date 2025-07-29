@@ -1,12 +1,13 @@
 const inPesquisar = document.getElementById ("inPesquisar")
 const btPesquisar = document.getElementById ("btPesquisar")
 const outResultado = document.getElementById ("outResultado")
-const btMostrarCarrinho = document.getElementById("mostrarCarrinho")
+const btMostrarCarrinho = document.getElementById("btMostrarCarrinho")
+const listaProdutos = document.getElementById("lista-produtos");
+const carrinho = document.getElementById("carrinho");
 
 //gerando a lista de produtos
-var listaProdutos = document.getElementById("lista-produtos");
 for(let i = 0; i < vetDescricao.length; i++){
-    var listaProdutos = document.getElementById("lista-produtos");
+    
     var produto = document.createElement('div');
     produto.className = "produto";
     var infoProduto = document.createElement('h4');
@@ -29,6 +30,24 @@ var vetCarrinho = [];
 function adicionarNoCarrinho(event){
     vetCarrinho.push(Number(event.target.value));
     console.log(vetCarrinho);
+}
+
+//mostra os produtos do carrinho
+btMostrarCarrinho.addEventListener("click", mostrarCarrinho)
+function mostrarCarrinho(){
+    carrinho.innerHTML = "";
+for(let i = 0; i < vetCarrinho.length; i++){
+    var produto = document.createElement('div');
+    produto.className = "produto";
+    var infoProduto = document.createElement('h4');
+    infoProduto.innerHTML = "Produto: " + vetDescricao[vetCarrinho[i]] +
+                            "<br>Categoria: " + vetCategoria[vetCarrinho[i]] +
+                            "<br>Marca: " + vetMarca[vetCarrinho[i]] +
+                            "<br>Unidade de Medida: " + vetUnidMed[vetCarrinho[i]] +
+                            "<br>Preço: R$" + vetPreco[vetCarrinho[i]];
+    produto.appendChild(infoProduto);
+    listaProdutos.appendChild(produto);
+}
 }
 
 btPesquisar.addEventListener("click", pesquisarElementos)
