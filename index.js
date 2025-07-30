@@ -4,8 +4,7 @@ const btPesquisarMarca = document.getElementById("btPesquisarMarca");
 const btPesquisarCategoria = document.getElementById("btPesquisarCategoria");
 const outResultado = document.getElementById("outResultado");
 const listaProdutos = document.getElementById("lista-produtos");
-const sltPEsquisas = document.getElementById("sltPEsquisas");const btMostrarCarrinho = document.getElementById("btMostrarCarrinho")
-const carrinho = document.getElementById("carrinho");
+const sltPEsquisas = document.getElementById("sltPEsquisas");const btMostrarCarrinho = document.getElementById("mostrarCarrinho")
 
 //gerando a lista de produtos
 for(let i = 0; i < vetDescricao.length; i++){
