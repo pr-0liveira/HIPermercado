@@ -46,7 +46,7 @@ for(let i = 0; i < vetCarrinho.length; i++){
                             "<br>Unidade de Medida: " + vetUnidMed[vetCarrinho[i]] +
                             "<br>Preço: R$" + vetPreco[vetCarrinho[i]];
     produto.appendChild(infoProduto);
-    listaProdutos.appendChild(produto);
+    carrinho.appendChild(produto);
 }
 }
 
