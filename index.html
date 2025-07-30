@@ -9,6 +9,7 @@
 
 <body>
     <select name="" id="sltPEsquisas">
+        <option disabled selected>selecione forma de pesquisa</option>
         <option value="produtos">produtos</option>
         <option value="marca">marca</option>
         <option value="categoria">categoria</option>
@@ -16,7 +17,12 @@
 
     <input type="text" placeholder="sua pesquisa" id="inPesquisa">
 
-    <button id="btPesquisar">pesquisar</button>
+    <button id="btPesquisarProdutos" style="display: none;">pesquisar por produto</button>
+
+    <button id="btPesquisarMarca" style="display: none;">pesquisar por marca</button>
+
+    <button id="btPesquisarCategoria" style="display: none;">pesquisar por categoria</button>
+
 
     <p id="outResultado"></p>
 
