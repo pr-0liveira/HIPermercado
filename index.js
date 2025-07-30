@@ -7,7 +7,6 @@ const carrinho = document.getElementById("carrinho");
 
 //gerando a lista de produtos
 for(let i = 0; i < vetDescricao.length; i++){
-    
     var produto = document.createElement('div');
     produto.className = "produto";
     var infoProduto = document.createElement('h4');
@@ -32,10 +31,17 @@ function adicionarNoCarrinho(event){
     console.log(vetCarrinho);
 }
 
-//mostra os produtos do carrinho
-btMostrarCarrinho.addEventListener("click", mostrarCarrinho)
+//mostra/esconde os produtos do carrinho
+btMostrarCarrinho.addEventListener("click", mostrarCarrinho);
 function mostrarCarrinho(){
     carrinho.innerHTML = "";
+    if(listaProdutos.style.display == ""){
+        listaProdutos.style.display = "none";
+        carrinho.style.display = "block";
+    } else {
+        listaProdutos.style.display = "";
+        carrinho.style.display = "none";
+    }
 for(let i = 0; i < vetCarrinho.length; i++){
     var produto = document.createElement('div');
     produto.className = "produto";
