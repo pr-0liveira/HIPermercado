@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trabalho</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -17,23 +19,27 @@
 
     <input type="text" placeholder="sua pesquisa" id="inPesquisa">
 
-    <button id="btPesquisarProdutos">pesquisar por produto</button>
+    <button id="btPesquisarProdutos" style="display: none;">pesquisar por produto</button>
 
-    <button id="btPesquisarMarca">pesquisar por marca</button>
+    <button id="btPesquisarMarca" style="display: none;">pesquisar por marca</button>
 
-    <button id="btPesquisarCategoria">pesquisar por categoria</button>
+    <button id="btPesquisarCategoria" style="display: none;">pesquisar por categoria</button>
 
 
     <p id="outResultado"></p>
 
-    <section id="lista-produtos">
+    <button id="btMostrarCarrinho">Mostrar Carrinho</button>
 
-    </section>
+    <div class="container">
+        <section id="lista-produtos">
+            <!--lista de produtos total aparece aqui-->
+        </section>
 
-    <section id="carrinho">
-
-    </section>
-
+        <section id="carrinho">
+            <!--lista de produtos adicionados no carrinho aparece aqui-->
+        </section>
+    </div>
+    
     <script src="vetores.js"></script>
     <script src="index.js"></script>
 </body>
