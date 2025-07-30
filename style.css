@@ -1,5 +1,18 @@
+.container{
+    width: 940px;
+    margin: 0 auto;
+    position: relative;
+}
+#lista-produtos{
+    position: absolute;
+    z-index: 2;
+}
+#carrinho{
+    position: absolute;
+    z-index: 1;
+}
 .produto{
-    width: 300px;
+    width: 200px;
     margin: 10px;
     box-sizing: border-box;
     display: inline-block;

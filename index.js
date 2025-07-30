@@ -4,7 +4,8 @@ const btPesquisarMarca = document.getElementById("btPesquisarMarca");
 const btPesquisarCategoria = document.getElementById("btPesquisarCategoria");
 const outResultado = document.getElementById("outResultado");
 const listaProdutos = document.getElementById("lista-produtos");
-const sltPEsquisas = document.getElementById("sltPEsquisas");const btMostrarCarrinho = document.getElementById("mostrarCarrinho")
+const sltPEsquisas = document.getElementById("sltPEsquisas");const btMostrarCarrinho = document.getElementById("btMostrarCarrinho")
+const carrinho = document.getElementById("carrinho");
 
 //gerando a lista de produtos
 for(let i = 0; i < vetDescricao.length; i++){
@@ -30,6 +31,31 @@ var vetCarrinho = [];
 function adicionarNoCarrinho(event){
     vetCarrinho.push(Number(event.target.value));
     console.log(vetCarrinho);
+}
+
+//mostra/esconde os produtos do carrinho
+btMostrarCarrinho.addEventListener("click", mostrarCarrinho);
+function mostrarCarrinho(){
+    carrinho.innerHTML = "";
+    if(listaProdutos.style.display == ""){
+        listaProdutos.style.display = "none";
+        carrinho.style.display = "block";
+    } else {
+        listaProdutos.style.display = "";
+        carrinho.style.display = "none";
+    }
+for(let i = 0; i < vetCarrinho.length; i++){
+    var produto = document.createElement('div');
+    produto.className = "produto";
+    var infoProduto = document.createElement('h4');
+    infoProduto.innerHTML = "Produto: " + vetDescricao[vetCarrinho[i]] +
+                            "<br>Categoria: " + vetCategoria[vetCarrinho[i]] +
+                            "<br>Marca: " + vetMarca[vetCarrinho[i]] +
+                            "<br>Unidade de Medida: " + vetUnidMed[vetCarrinho[i]] +
+                            "<br>Preço: R$" + vetPreco[vetCarrinho[i]];
+    produto.appendChild(infoProduto);
+    carrinho.appendChild(produto);
+}
 }
 
 btPesquisarProdutos.addEventListener("click", pesquisarProdutos);
