@@ -7,9 +7,7 @@ const listaProdutos = document.getElementById("lista-produtos");
 const sltPEsquisas = document.getElementById("sltPEsquisas");const btMostrarCarrinho = document.getElementById("mostrarCarrinho")
 
 //gerando a lista de produtos
-var listaProdutos = document.getElementById("lista-produtos");
 for(let i = 0; i < vetDescricao.length; i++){
-    var listaProdutos = document.getElementById("lista-produtos");
     var produto = document.createElement('div');
     produto.className = "produto";
     var infoProduto = document.createElement('h4');
