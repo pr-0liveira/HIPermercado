@@ -55,6 +55,7 @@ btPesquisarCategoria.addEventListener("click", pesquisarCategoria);
 
 sltPEsquisas.addEventListener("change", pesquisaEscolhida);
 
+//function que cria os elementos no html
 function criarElementoNoHtml(indElem) {
     var produto = document.createElement('div');
     produto.className = "produto";
