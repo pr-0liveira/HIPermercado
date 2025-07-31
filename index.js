@@ -65,16 +65,45 @@ function criarElementoNoHtml(indElem) {
                             "<br>Marca: " + vetMarca[indElem] +
                             "<br>Unidade de Medida: " + vetUnidMed[indElem] +
                             "<br>Preço: R$" + vetPreco[indElem];
+    var imgProduto = document.createElement('img');
+    imgProduto.className = "imagem-produto";
+    if(vetDescricao[indElem].includes("Achocolatado")){
+        imgProduto.src = "imagens/achocolatado.png";
+    } else if(vetDescricao[indElem].includes("Açúcar")){
+        imgProduto.src = "imagens/acucar.png";
+    } else if(vetDescricao[indElem].includes("Arroz")){
+        imgProduto.src = "imagens/arroz.png";
+    } else if(vetDescricao[indElem].includes("Café")){
+        imgProduto.src = "imagens/cafe.png";
+    } else if(vetDescricao[indElem].includes("Ervilha")){
+        imgProduto.src = "imagens/ervilha.jpeg";
+    } else if(vetDescricao[indElem].includes("Tomate")){
+        imgProduto.src = "imagens/tomate.jpeg";
+    } else if(vetDescricao[indElem].includes("Farinha")){
+        imgProduto.src = "imagens/trigo.jpeg";
+    } else if(vetDescricao[indElem].includes("Feijão")){
+        imgProduto.src = "imagens/feijao.png";
+    } else if(vetDescricao[indElem].includes("Leite")){
+        imgProduto.src = "imagens/leite.jpg";
+    } else if(vetDescricao[indElem].includes("Macarrão")){
+        imgProduto.src = "imagens/macarrao.jpg";
+    } else if(vetDescricao[indElem].includes("Alho")){
+        imgProduto.src = "imagens/Alho.jpeg";
+    } else if(vetDescricao[indElem].includes("Amaciante")){
+        imgProduto.src = "imagens/amaciante.jpeg";
+    } else if(vetDescricao[indElem].includes("Tomate")){
+        imgProduto.src = "imagens/tomate.jpeg";
+    }
     var btAddCarrinho = document.createElement('button');
     btAddCarrinho.textContent = "Adicionar ao Carrinho";
     btAddCarrinho.value = indElem;
+    produto.appendChild(imgProduto);
     produto.appendChild(infoProduto);
     produto.appendChild(btAddCarrinho);
     listaProdutos.appendChild(produto);
     btAddCarrinho.addEventListener("click", adicionarNoCarrinho);
-
-
-} function pesquisarProdutos() {
+}
+function pesquisarProdutos() {
     listaProdutos.innerHTML = "";
 
     for (let i = 0; i < vetDescricao.length; i++) {

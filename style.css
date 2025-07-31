@@ -17,3 +17,7 @@
     box-sizing: border-box;
     display: inline-block;
 }
+.imagem-produto{
+    width: 150px;
+    height: auto;
+}
