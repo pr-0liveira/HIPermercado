@@ -5,31 +5,21 @@ const btPesquisarCategoria = document.getElementById("btPesquisarCategoria");
 const outResultado = document.getElementById("outResultado");
 const listaProdutos = document.getElementById("lista-produtos");
 const sltPEsquisas = document.getElementById("sltPEsquisas");
-const btMostrarCarrinho = document.getElementById("btMostrarCarrinho")
+const btMostrarCarrinho = document.getElementById("btMostrarCarrinho");
+const outValorTotalCar = document.getElementById("outValorTotalCar");
 
 //gerando a lista de produtos
 for(let i = 0; i < vetDescricao.length; i++){
-    var produto = document.createElement('div');
-    produto.className = "produto";
-    var infoProduto = document.createElement('h4');
-    infoProduto.innerHTML = "Produto: " + vetDescricao[i] +
-                            "<br>Categoria: " + vetCategoria[i] +
-                            "<br>Marca: " + vetMarca[i] +
-                            "<br>Unidade de Medida: " + vetUnidMed[i] +
-                            "<br>Preço: R$" + vetPreco[i];
-    var btAddCarrinho = document.createElement('button');
-    btAddCarrinho.textContent = "Adicionar ao Carrinho";
-    btAddCarrinho.value = i;
-    produto.appendChild(infoProduto);
-    produto.appendChild(btAddCarrinho);
-    listaProdutos.appendChild(produto);
-    btAddCarrinho.addEventListener("click", adicionarNoCarrinho);
+    criarElementoNoHtml(i);
 }
 
 //adiciona produtos no carrinho
 var vetCarrinho = [];
+var valorTotal;
 function adicionarNoCarrinho(event){
     vetCarrinho.push(Number(event.target.value));
+    valorTotal += vetPreco[event.target.value];
+    outValorTotalCar.innerHTML = valorTotal.toFixed(2);
     console.log(vetCarrinho);
 }
 
@@ -64,17 +54,15 @@ btPesquisarCategoria.addEventListener("click", pesquisarCategoria);
 
 sltPEsquisas.addEventListener("change", pesquisaEscolhida);
 
-var vetCarrinho = [];
-
 function criarElementoNoHtml(indElem){
-                var produto = document.createElement('div');
+            var produto = document.createElement('div');
             produto.className = "produto";
             var infoProduto = document.createElement('h4');
             infoProduto.innerHTML = "Produto: " + vetDescricao[indElem] +
-                "<br>Categoria: " + vetCategoria[indElem] +
-                "<br>Marca: " + vetMarca[indElem] +
-                "<br>Unidade de Medida: " + vetUnidMed[indElem] +
-                "<br>Preço: R$" + vetPreco[indElem];
+                                    "<br>Categoria: " + vetCategoria[indElem] +
+                                    "<br>Marca: " + vetMarca[indElem] +
+                                    "<br>Unidade de Medida: " + vetUnidMed[indElem] +
+                                    "<br>Preço: R$" + vetPreco[indElem];
             var btAddCarrinho = document.createElement('button');
             btAddCarrinho.textContent = "Adicionar ao Carrinho";
             btAddCarrinho.value = indElem;
