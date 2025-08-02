@@ -69,11 +69,11 @@ function criarElementoNoHtml(indElem) {
     imgProduto.className = "imagem-produto";
     if(vetDescricao[indElem].includes("Achocolatado")){
         imgProduto.src = "imagens/achocolatado.png";
-    } else if(vetDescricao[indElem].includes("Açúcar")){
+    } else if(vetDescricao[indElem].includes("Açúcar") || vetDescricao[indElem].includes("Sal")){
         imgProduto.src = "imagens/acucar.png";
     } else if(vetDescricao[indElem].includes("Arroz")){
         imgProduto.src = "imagens/arroz.png";
-    } else if(vetDescricao[indElem].includes("Café")){
+    } else if(vetDescricao[indElem].includes("Café") || vetDescricao[indElem].includes("Pão")){
         imgProduto.src = "imagens/cafe.png";
     } else if(vetDescricao[indElem].includes("Ervilha")){
         imgProduto.src = "imagens/ervilha.jpeg";
@@ -81,18 +81,44 @@ function criarElementoNoHtml(indElem) {
         imgProduto.src = "imagens/tomate.jpeg";
     } else if(vetDescricao[indElem].includes("Farinha")){
         imgProduto.src = "imagens/trigo.jpeg";
-    } else if(vetDescricao[indElem].includes("Feijão")){
+    } else if(vetDescricao[indElem].includes("Feijão") || vetDescricao[indElem].includes("Lã")){
         imgProduto.src = "imagens/feijao.png";
     } else if(vetDescricao[indElem].includes("Leite")){
         imgProduto.src = "imagens/leite.jpg";
-    } else if(vetDescricao[indElem].includes("Macarrão")){
+    } else if(vetDescricao[indElem].includes("Macarrão") || vetDescricao[indElem].includes("Alface")){
         imgProduto.src = "imagens/macarrao.jpg";
-    } else if(vetDescricao[indElem].includes("Alho")){
+    } else if(vetDescricao[indElem].includes("Alho") || vetDescricao[indElem].includes("Desinfetante")){
         imgProduto.src = "imagens/Alho.jpeg";
-    } else if(vetDescricao[indElem].includes("Amaciante")){
+    } else if(vetDescricao[indElem].includes("Amaciante") || vetDescricao[indElem].includes("Água")){
         imgProduto.src = "imagens/amaciante.jpeg";
-    } else if(vetDescricao[indElem].includes("Tomate")){
-        imgProduto.src = "imagens/tomate.jpeg";
+    } else if(vetDescricao[indElem].includes("Margarina") || vetDescricao[indElem].includes("Detergente")){
+        imgProduto.src = "imagens/margarina.jpg";
+    } else if(vetDescricao[indElem].includes("Milho") || vetDescricao[indElem].includes("Banana")){
+        imgProduto.src = "imagens/banana.jpeg";
+    } else if(vetDescricao[indElem].includes("Óleo") || vetDescricao[indElem].includes("Vinagre")){
+        imgProduto.src = "imagens/vinagre.jpeg";
+    } else if(vetDescricao[indElem].includes("Sardinha") || vetDescricao[indElem].includes("Sabão")){
+        imgProduto.src = "imagens/sardinha.jpeg";
+    } else if(vetDescricao[indElem].includes("Tempero") || vetDescricao[indElem].includes("Cebolinha")){
+        imgProduto.src = "imagens/cebolinha.jpeg";
+    } else if(vetDescricao[indElem].includes("Absorvente") || vetDescricao[indElem].includes("Sabonete")){
+        imgProduto.src = "imagens/sabonete.jpeg";
+    } else if(vetDescricao[indElem].includes("Creme") || vetDescricao[indElem].includes("Limão")){
+        imgProduto.src = "imagens/limao.jpeg";
+    } else if(vetDescricao[indElem].includes("Papel")){
+        imgProduto.src = "imagens/papel-higienico.jpeg";
+    } else if(vetDescricao[indElem].includes("Batata")){
+        imgProduto.src = "imagens/batata.jpeg";
+    } else if(vetDescricao[indElem].includes("Cebola")){
+        imgProduto.src = "imagens/cebola.jpeg";
+    } else if(vetDescricao[indElem].includes("Cenoura")){
+        imgProduto.src = "imagens/cenoura.jpeg";
+    } else if(vetDescricao[indElem].includes("Pepino")){
+        imgProduto.src = "imagens/pepino.jpeg";
+    } else if(vetDescricao[indElem].includes("Ovos")){
+        imgProduto.src = "imagens/ovos.jpeg";
+    } else if(vetCategoria[indElem].includes("Carnes")){
+        imgProduto.src = "imagens/carne.jpeg";
     }
     var btAddCarrinho = document.createElement('button');
     btAddCarrinho.textContent = "Adicionar ao Carrinho";
