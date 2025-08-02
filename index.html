@@ -10,36 +10,58 @@
 </head>
 
 <body>
-    <select name="" id="sltPEsquisas">
-        <option disabled selected>selecione forma de pesquisa</option>
-        <option value="produtos">produtos</option>
-        <option value="marca">marca</option>
-        <option value="categoria">categoria</option>
-    </select>
+    <header></header>
+    <main>
+        <select name="" id="sltPEsquisas">
+            <option disabled selected>Selecione forma de pesquisa</option>
+            <option value="produtos">Produtos</option>
+            <option value="marca">Marca</option>
+            <option value="categoria">Categoria</option>
+            <option value="preco">Preço</option>
+        </select>
 
-    <input type="text" placeholder="sua pesquisa" id="inPesquisa">
+        <select name="sltMenorValor" id="sltMenorValor">
+            <option value=""disabled selected>Menor Preço de Cada Categoria</option>
+            <option value="mercearia">Mercearia</option>
+            <option value="higiene">Produtos de Hiegiene e Limpeza</option>
+            <option value="hortiFruti">Hortifrutigranjeiros</option>
+            <option value="carnes">Carnes ( Aves, Bovino e Suíno)</option>
+        </select>
 
-    <button id="btPesquisarProdutos" style="display: none;">pesquisar por produto</button>
+        <input type="text" placeholder="sua pesquisa" id="inPesquisa" style="display: none;">
 
-    <button id="btPesquisarMarca" style="display: none;">pesquisar por marca</button>
+        <button id="btPesquisarProdutos" style="display: none;">Pesquisar por Produto</button>
 
-    <button id="btPesquisarCategoria" style="display: none;">pesquisar por categoria</button>
+        <button id="btPesquisarMarca" style="display: none;">Pesquisar por Marca</button>
+
+        <button id="btPesquisarCategoria" style="display: none;">Pesquisar por Categoria</button>
+
+        <button id="btMostrarCarrinho">Mostrar Carrinho</button>
+
+        <h2 style="display: none;">Pesquisa por Preço</h2>
+
+        <input style="display: none;" type="number" id="inValorMinimo" placeholder="valor minimo">
+        <input style="display: none;" type="number" id="inValorMaximo" placeholder="valor máximo">
+
+        <button style="display: none;" id="btPesquisarPorPreco">Pesquisar Por Preco</button>
 
 
-    <p id="outResultado"></p>
+        <p id="outResultado"></p>
 
-    <button id="btMostrarCarrinho">Mostrar Carrinho</button>
+        <div class="container">
+            <section id="lista-produtos">
+                <!--lista de produtos total aparece aqui-->
+            </section>
 
-    <div class="container">
-        <section id="lista-produtos">
-            <!--lista de produtos total aparece aqui-->
-        </section>
+            <section id="carrinho">
+                <!--lista de produtos adicionados no carrinho aparece aqui-->
+            </section>
+        </div>
+    </main>
+    <footer>
 
-        <section id="carrinho">
-            <!--lista de produtos adicionados no carrinho aparece aqui-->
-        </section>
-    </div>
-    
+    </footer>
+
     <script src="vetores.js"></script>
     <script src="index.js"></script>
 </body>
