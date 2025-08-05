@@ -2,34 +2,18 @@ const inPesquisa = document.getElementById("inPesquisa");
 const btPesquisarProdutos = document.getElementById("btPesquisarProdutos");
 const btPesquisarMarca = document.getElementById("btPesquisarMarca");
 const btPesquisarCategoria = document.getElementById("btPesquisarCategoria");
-const outResultado = document.getElementById("outResultado");
 const listaProdutos = document.getElementById("lista-produtos");
 const sltPEsquisas = document.getElementById("sltPEsquisas");
 const btMostrarCarrinho = document.getElementById("btMostrarCarrinho");
-const outValorTotalCar = document.getElementById("outValorTotalCar");;
+const outValorTotalCar = document.getElementById("outValorTotalCar");
 const btPesquisarPorPreco = document.getElementById("btPesquisarPorPreco");
 const inValorMinimo = document.getElementById("inValorMinimo");
 const inValorMaximo = document.getElementById("inValorMaximo");
-const btProdutosBaratos = document.getElementById("btProdutosBaratos");
 const sltMenorValor = document.getElementById("sltMenorValor");
 
 //gerando a lista de produtos
 for (let i = 0; i < vetDescricao.length; i++) {
-    let produto = document.createElement('div');
-    produto.className = "produto";
-    var infoProduto = document.createElement('h4');
-    infoProduto.innerHTML = "Produto: " + vetDescricao[i] +
-        "<br>Categoria: " + vetCategoria[i] +
-        "<br>Marca: " + vetMarca[i] +
-        "<br>Unidade de Medida: " + vetUnidMed[i] +
-        "<br>Preço: R$" + vetPreco[i];
-    var btAddCarrinho = document.createElement('button');
-    btAddCarrinho.textContent = "Adicionar ao Carrinho";
-    btAddCarrinho.value = i;
-    produto.appendChild(infoProduto);
-    produto.appendChild(btAddCarrinho);
-    listaProdutos.appendChild(produto);
-    btAddCarrinho.addEventListener("click", adicionarNoCarrinho);
+    criarElementoNoHtml(i);
 }
 
 //adiciona produtos no carrinho
@@ -158,30 +142,6 @@ function pesquisarProdutos() {
     }
 }
 
-function criarElementoNoHtml(indElem) {
-    var produto = document.createElement('div');
-    produto.className = "produto";
-    var infoProduto = document.createElement('h4');
-    infoProduto.innerHTML = "Produto: " + vetDescricao[indElem] +
-        "<br>Categoria: " + vetCategoria[indElem] +
-        "<br>Marca: " + vetMarca[indElem] +
-        "<br>Unidade de Medida: " + vetUnidMed[indElem] +
-        "<br>Preço: R$" + vetPreco[indElem];
-    var btAddCarrinho = document.createElement('button');
-    btAddCarrinho.textContent = "Adicionar ao Carrinho";
-    btAddCarrinho.value = indElem;
-    produto.appendChild(infoProduto);
-    produto.appendChild(btAddCarrinho);
-    listaProdutos.appendChild(produto);
-    btAddCarrinho.addEventListener("click", adicionarNoCarrinho);
-}
-
-function adicionarNoCarrinho(event) {
-    vetCarrinho.push(Number(event.target.value));
-    console.log(vetCarrinho);
-}
-
-
 function pesquisarMarca() {
 
     listaProdutos.innerHTML = "";
@@ -254,7 +214,7 @@ function pesquisaEscolhida() {
     }
 }
 //funcionalidade pesquisar por preço
-btPesquisarPorPreco.addEventListener("click", pesquisarPorPreco)
+btPesquisarPorPreco.addEventListener("click", pesquisarPorPreco);
 
 function pesquisarPorPreco() {
 
@@ -269,9 +229,9 @@ function pesquisarPorPreco() {
 }
 
 //desafio
-sltMenorValor.addEventListener("change", mostrarProdutoMaisBarato)
+sltMenorValor.addEventListener("change", mostrarProdutoMaisBarato);
 function mostrarProdutoMaisBarato() {
-    const categoriaEscolhida = sltMenorValor.value
+    const categoriaEscolhida = sltMenorValor.value;
     switch (categoriaEscolhida) {
         case ("mercearia"):
             var vetPrecosMercearia = []
@@ -281,70 +241,59 @@ function mostrarProdutoMaisBarato() {
                 }
             }
             for (let i = 0; i < vetPrecosMercearia.length; i++) {
-                let menorValor = Number.MAX_VALUE
+                let menorValor = Number.MAX_VALUE;
                 if (vetPrecosMercearia[i] < menorValor) {
-                    listaProdutos.innerHTML = ""
-                    criarElementoNoHtml(i)
+                    listaProdutos.innerHTML = "";
+                    criarElementoNoHtml(i);
                 }
             }
             break;
         case ("higiene"):
-            let menorValor = Number.MAX_VALUE
-            var indMenorValor = -1
+            let menorValor = Number.MAX_VALUE;
+            var indMenorValor = -1;
 
             for (let i = 60; i < vetCategoria.length; i++) {
                 if (vetCategoria[i].includes('Produtos de Higiene e Limpeza')) {
                     if (vetPreco[i] < menorValor) {
-                        menorValor = vetPreco[i]
-                        indMenorValor = i
+                        menorValor = vetPreco[i];
+                        indMenorValor = i;
                     }
                 }
             }
 
-            listaProdutos.innerHTML = ""
-            criarElementoNoHtml(indMenorValor)
+            listaProdutos.innerHTML = "";
+            criarElementoNoHtml(indMenorValor);
 
             break;
         case ("hortiFruti"):
-            let menorValorhorti = Number.MAX_VALUE
-            var indMenorValor = -1
+            let menorValorhorti = Number.MAX_VALUE;
+            var indMenorValor = -1;
 
             for (let i = 60; i < vetCategoria.length; i++) {
                 if (vetCategoria[i].includes('Hortifrutigranjeiros')) {
                     if (vetPreco[i] < menorValorhorti) {
-                        menorValorhorti = vetPreco[i]
-                        indMenorValor = i
+                        menorValorhorti = vetPreco[i];
+                        indMenorValor = i;
                     }
                 }
             }
 
-            listaProdutos.innerHTML = ""
-            criarElementoNoHtml(indMenorValor)
+            listaProdutos.innerHTML = "";
+            criarElementoNoHtml(indMenorValor);
             break;
         case ("carnes"):
-            let menorValorcarne = Number.MAX_VALUE
-            var indMenorValor = -1
+            let menorValorcarne = Number.MAX_VALUE;
+            var indMenorValor = -1;
 
             for (let i = 60; i < vetCategoria.length; i++) {
                 if (vetCategoria[i].includes('Carnes ( Aves, Bovino e Suíno)')) {
                     if (vetPreco[i] < menorValorcarne) {
-                        menorValorcarne = vetPreco[i]
-                        indMenorValor = i
+                        menorValorcarne = vetPreco[i];
+                        indMenorValor = i;
                     }
                 }
             }
-
-            listaProdutos.innerHTML = ""
-            criarElementoNoHtml(indMenorValor)
-
-
-
-
+            listaProdutos.innerHTML = "";
+            criarElementoNoHtml(indMenorValor);
     }
-
 }
-
-
-
-
-
